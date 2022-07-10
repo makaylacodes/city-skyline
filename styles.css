@@ -1,13 +1,61 @@
 *{
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    /*Adds a border to everything, will remove later*/
+    border: 1px solid black;
 }
 
 body{
     background: #fcfcfc;
     font-family: sans-serif;
+    /*100vh fills the whole viewport*/
+    height:100vh;
+    margin:0;
+    overflow:hidden;
 }
+
+.background-buildings{
+    width:100%;
+    height: 100%;
+}
+
+.bb1{
+    width:10%;
+    height:70%;
+    /*Centers the parts of the building using flex or flex-box*/
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    /*This is a variable declaration*/
+    --building-color1:#aa80ff;
+}
+/*The percentages are relative to the parent. The heights for 
+bb1x will add up 100% vertically filling the container*/
+.bb1a{
+    width: 70%;
+    height: 10%;
+    /*Uses the variable declared in .bb1*/
+    background-color: var(--building-color1);
+}
+.bb1b{
+    width: 80%;
+    height: 10%;
+    background-color: var(--building-color1);
+}
+.bb1c{
+    width: 90%;
+    height: 10%;
+    background-color: var(--building-color1);
+}
+.bb1d{
+    width: 100%;
+    height: 70%;
+    background-color: var(--building-color1);
+}
+
+
+
+
+
 
 #footer{
     text-align: center;
@@ -17,7 +65,7 @@ body{
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgb(67, 55, 55);
+    background: rgb(94, 64, 64);
     height: auto;
     width: 100vw;
     padding-top: 20px;
