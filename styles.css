@@ -12,6 +12,8 @@ declared here can be used anywhere in the application.*/
     --building-color2: #66cc99;
     --building-color3: #cc6699;
     --building-color4:#538cc6;
+    /*This is a secondary color for the purple buildings*/
+    --window-color1: black;
 }
 
 body{
@@ -23,17 +25,7 @@ body{
     overflow:hidden;
 }
 
-.background-buildings{
-    width:100%;
-    height: 100%;
-    /*Ensures that the buildings are not stacked on top of one another 
-    or running off the screen. Flexbox evenly spaces the buildings
-    across the bottom element*/
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-evenly;
-}
-
+/*BACKGROUND BUILDINGS - "bb" stands for "background building"*/
 .bb1{
     width:10%;
     height:70%;
@@ -43,9 +35,9 @@ body{
     align-items: center;
    
 }
+
 /*The percentages are relative to the parent. The heights for 
 bb1x will add up 100% vertically filling the container*/
-
 .bb1a{
     width: 70%;
     height: 10%;
@@ -84,6 +76,71 @@ bb1x will add up 100% vertically filling the container*/
     width: 11%;
     height: 58%;
     background-color: var(--building-color4);
+}
+
+/*Optimizing the code by making reusable properties*/
+.background-buildings, .foreground-buildings{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 0;
+}
+
+/*The foreground-buildings will sit directly on top of the background buildings element.
+makes them the same size as the body and moves to the top left corner*/
+
+/* Took this code out because I used the .background-buildings, .foreground-buildings
+.foreground-buildings{
+    width: 100%;
+    height:100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}*/
+
+
+/*FOREGROUND BUILDINGS - "fb" stands for "foreground building"*/
+.fb1 {
+    width: 10%;
+    height: 60%;
+    background-color:var(--building-color4);
+}
+
+.fb2 {
+    width: 10%;
+    height: 40%;
+    background-color:var(--building-color3);
+}
+  
+.fb3 {
+    width: 10%;
+    height: 35%;
+    background-color:var(--building-color1);
+}
+  
+.fb4 {
+    width: 8%;
+    height: 45%;
+    background-color:var(--building-color1);
+    position: relative;
+    left: 10%;
+}
+  
+.fb5 {
+    width: 10%;
+    height: 33%;
+    background-color:var(--building-color2);
+    position: relative;
+    right: 10%;
+}
+  
+.fb6 {
+    width: 9%;
+    height: 38%;
+    background-color:var(--building-color3);
 }
 
 
